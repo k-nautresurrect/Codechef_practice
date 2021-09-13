@@ -36,15 +36,16 @@ using vpd = vector<pd>;
 #define ub upper_bound
 
 //loops
-#define FOR(i,a,b) for(int i = (a); i < (b); ++i)
-#define FOR(i,a) FOR(i,0,a)
-#define ROF(i,a,b) for (int i = (b)-1; i >= (a); --i)
-#define ROF(i,a) ROF(i,0,a)
-#define rep(a) FOR(_,a)
-#define each(a,x) for(auto& a:x)
+// #define FOR(i,a,b) for(int i = (a); i < (b); ++i)
+// #define FOR(i,a) FOR(i,0,a)
+// #define ROF(i,a,b) for (int i = (b)-1; i >= (a); --i)
+// #define ROF(i,a) ROF(i,0,a)
+// #define rep(a) FOR(_,a)
+// #define each(a,x) for(auto& a:x)
 
 #define fast_cin() ios_base::sync_with_stdio(false);  cin.tie(NULL);  cout.tie(NULL)
 #define ln "\n"
+
 
 
 void solve(){
