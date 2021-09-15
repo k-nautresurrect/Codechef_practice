@@ -3,16 +3,24 @@
 using namespace std;
 
 int main(){
-	int n; cin >> n;
-	if(n%5 == 0 || n%11 == 0){
-		if(n%5 == 0 && n%11 == 0){
-			cout << "BOTH";
-		}else{
-			cout << "ONE";
+	int n; cin>>n;
+	int fac[n] = {0}, cnt = 0;
+	for(int i = 1; i<=n; i++){
+		if(n%i == 0){
+			fac[i] = i;
+			cnt++;
 		}
 	}
-	else{
-		cout << "NONE";
+	cout << cnt << "\n";
+	for(int i = 1; i<=n; i++){
+		if(fac[i] != 0){
+			if(i != n){
+				cout << fac[i] << " ";
+			}else{
+				cout << fac[i];
+			}
+		}
 	}
+
 	return 0;
 }
