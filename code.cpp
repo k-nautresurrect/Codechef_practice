@@ -3,12 +3,9 @@
 using namespace std;
 
 int main(){
-	int i,n,k; cin >> n >> k;
-	int arr[n-1];
-	for(i = 0; i<n; i++){
-		cin >> arr[i];
-		if(arr[i] == k){ cout << 1; break; }
-	}
-	if(i >= n){ cout << -1; }
+	int a,b,c; cin >> a >> b >> c;
+	int s = (a+b+c)/2;
+	if(s<a || s<b || s<c){ cout << "NO"; }
+	else{ cout << "YES"; }
 	return 0;
 }
