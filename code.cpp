@@ -3,9 +3,9 @@
 using namespace std;
 
 int main(){
-	int l,r; cin >> l >> r;
-	for(int i = l; i <= r; i++){
-		if(i%2 != 0){ cout << i << " "; }
-	}
+	int n; cin >> n;
+	if(n%5 == 0 || n%6 == 0){
+		cout << "YES";
+	}else{ cout << "NO"; }
 	return 0;
 }
