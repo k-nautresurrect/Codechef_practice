@@ -3,8 +3,16 @@
 using namespace std;
 
 int main(){
-	int a,b,x,y;
-	cin >> a >> b >> x >> y;
-	cout << (a * x) + (b * y);
+	int n; cin >> n;
+	if(n%5 == 0 || n%11 == 0){
+		if(n%5 == 0 && n%11 == 0){
+			cout << "BOTH";
+		}else{
+			cout << "ONE";
+		}
+	}
+	else{
+		cout << "NONE";
+	}
 	return 0;
 }
