@@ -3,13 +3,12 @@
 using namespace std;
 
 int main(){
-	int n; cin >> n;
+	int i,n,k; cin >> n >> k;
 	int arr[n-1];
-	for(int i = 0; i < n; i++){
+	for(i = 0; i<n; i++){
 		cin >> arr[i];
+		if(arr[i] == k){ cout << 1; break; }
 	}
-	for(int i = n-1; i >= 0; i--){
-		cout << arr[i] << " ";
-	}
+	if(i >= n){ cout << -1; }
 	return 0;
 }
