@@ -3,12 +3,11 @@
 using namespace std;
 
 int main(){
-	long long n, sumev = 0, sumod = 0; cin >> n;
-	while(n > 0){
-		sumev += 2*n;
-		sumod += (2 * n) -1;
-		n--;
+	int a, b, c;
+	cin >> a >> b >> c;
+	if(a + b + c == 180 && a>0 && b>0 && c>0){
+	    cout << "YES";
 	}
-	cout << sumod << " " << sumev;
+	else{ cout << "NO"; }
 	return 0;
 }
