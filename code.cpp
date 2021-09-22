@@ -3,22 +3,11 @@
 using namespace std;
 
 int main(){
-	int n, val = 1;  cin >> n;
-	for(int row = 1; row <= n; row++){
-		if(row%2 != 0){
-			for(int col = 1; col <= 5; col++){
-				cout << val << " ";   val++;
-			}
-			val = val - 1;
-		}
-		if(row%2 == 0){
-			val = val + 5;
-			for(int col = 1; col <= 5; col++){
-				cout << val << " ";  val--;
-			}
-			val = val + 6;
-		}
-		cout << "\n";
+	int n;
+	while(true){
+		cin >> n;
+		if(n == 42){ break; }
+		else{ cout << n << "\n"; }
 	}
 	return 0;
 }
