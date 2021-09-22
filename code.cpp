@@ -1,36 +1,33 @@
 #include<bits/stdc++.h>
 
 using namespace std;
+using ll = long long;
+#define pb push_back
 
 int main(){
 	int T;  cin >> T;
 	while(T-- > 0){
-		int a ,b ,c;  cin >> a >> b >> c;
-		int x, y, z; cin >> x >> y >> z;
-		int min = 240, p = 0;
-		vector< pair<int,int> > awn = { {x,a}, {y,b}, {z,c} };
-		
-		sort(awn.rbegin(), awn.rend());
+	    ll n, k;  cin >> n >> k;
+        string s; cin >> s;
+        vector <int>v;
+        vector <int>cnt(2*n,0);
+        for(int i=0;i<n;i++)
+        {
+            if(s[i]=='1'){
+            	v.pb(i);  cnt[i]++;
+            }
+        }
+        int ans=0;
+        for(int i = 0; i < v.size() ; i++)
+        {
+            if(v[i]-k>=0 && cnt[v[i]-k]){ continue; }
+            if(cnt[v[i]+k]){ continue; }
+            
+            ++ans;
+            ++cnt[v[i]+k];
+        }
+        cout<<ans<<"\n";
+    }
 
-		p += awn[0].first * 20;
-		min -= awn[0].second * 20;
-		while(min > 0){
-			for(int i = 0; i < 20; i++){
-				if(min <= 0){ break; }
-				else{
-					p += awn[1].first;
-					min -= awn[1].second;
-				}
-			}
-			for(int i = 0; i < 20; i++){
-				if(min <= 0){ break; }
-				else{
-					p += awn[2].first;
-					min -= awn[2].second;
-				}
-			}
-		}
-		cout << p + min << "\n";
-	}
 	return 0;
 }
