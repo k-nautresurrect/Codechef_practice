@@ -5,14 +5,14 @@ using namespace std;
 int main(){
 	int T;  cin >> T;
 	while(T-- > 0){
-		int day[7], cntr = 0, cnts = 0;
-		for(int i = 0; i < 7; i++){
-			cin >> day[i];
-			if(day[i] == 0){ cntr++; }
-			if(day[i] == 1){ cnts++; }
+		int n; cin >> n;
+		if(n == 1){ cout << 3 << "\n"; }
+		else if(n == 2){ cout << 33 << "\n"; }
+		else{
+			char s = '0';
+			int mul = (n-2);
+			cout << 3 << string(mul, s) << 3 << "\n";
 		}
-		if(cnts > cntr){ cout << "YES" << "\n"; }
-		if(cntr > cnts){ cout << "NO" << "\n"; }
 	}
 	return 0;
 }
