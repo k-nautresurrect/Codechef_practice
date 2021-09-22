@@ -3,13 +3,22 @@
 using namespace std;
 
 int main(){
-	int a, b, c;
-	cin >> a >> b >> c;
-	if(a+b>c && b+c>a && c+a>b){
-		if(a == b && b == c && c == a){ cout << 1; }
-		else if((a == b && b != c ) || (b == c &&  b != a) || (c == a && c != b)){
-			cout << 2;
-		}else{ cout << 3; }
-	}else{ cout << -1; }
+	int n, val = 1;  cin >> n;
+	for(int row = 1; row <= n; row++){
+		if(row%2 != 0){
+			for(int col = 1; col <= 5; col++){
+				cout << val << " ";   val++;
+			}
+			val = val - 1;
+		}
+		if(row%2 == 0){
+			val = val + 5;
+			for(int col = 1; col <= 5; col++){
+				cout << val << " ";  val--;
+			}
+			val = val + 6;
+		}
+		cout << "\n";
+	}
 	return 0;
 }
