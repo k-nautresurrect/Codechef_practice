@@ -1,33 +1,24 @@
 #include<bits/stdc++.h>
 
 using namespace std;
-using ll = long long;
-#define pb push_back
+
 
 int main(){
-	int T;  cin >> T;
-	while(T-- > 0){
-	    ll n, k;  cin >> n >> k;
-        string s; cin >> s;
-        vector <int>v;
-        vector <int>cnt(2*n,0);
-        for(int i=0;i<n;i++)
-        {
-            if(s[i]=='1'){
-            	v.pb(i);  cnt[i]++;
-            }
+    int T;  cin >> T;
+    while(T-- > 0){
+        int n;  cin >> n;  
+        int i = 0, dgt[to_string(n).length()], cnt = 0, no = 0, mul = 10;
+        while(n != 0){
+            dgt[i] = n%10;
+            cnt ++;
+            i++;
+            n = n/10;
         }
-        int ans=0;
-        for(int i = 0; i < v.size() ; i++)
-        {
-            if(v[i]-k>=0 && cnt[v[i]-k]){ continue; }
-            if(cnt[v[i]+k]){ continue; }
-            
-            ++ans;
-            ++cnt[v[i]+k];
+        for(i = 0; i < sizeof(dgt)/sizeof(dgt[0]); i++){
+            no += dgt[i] * pow(10,cnt-1);
+            cnt--;
         }
-        cout<<ans<<"\n";
+        cout << no << "\n";
     }
-
 	return 0;
 }
