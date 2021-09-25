@@ -1,24 +1,15 @@
 #include<bits/stdc++.h>
 
 using namespace std;
-
+#define ln "\n";
 
 int main(){
     int T;  cin >> T;
     while(T-- > 0){
-        int n;  cin >> n;  
-        int i = 0, dgt[to_string(n).length()], cnt = 0, no = 0, mul = 10;
-        while(n != 0){
-            dgt[i] = n%10;
-            cnt ++;
-            i++;
-            n = n/10;
-        }
-        for(i = 0; i < sizeof(dgt)/sizeof(dgt[0]); i++){
-            no += dgt[i] * pow(10,cnt-1);
-            cnt--;
-        }
-        cout << no << "\n";
+        int d,l,r;  cin >> d >> l >> r;
+        if(d >= l && d <= r){ cout << "Take second dose now" << ln; }
+        else if(d >= r){ cout << "Too Late" << ln; }
+        else{ cout << "Too Early" << ln; }
     }
 	return 0;
 }
