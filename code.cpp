@@ -1,25 +1,27 @@
 #include<bits/stdc++.h>
 
 using namespace std;
+using ll = long long;
 #define ln "\n";
+
 
 int main(){
     int T;  cin >> T;
     while(T-- > 0){
-       int n, a, b, c;  cin >> n >> a >> b >> c;
-       int cnt = 0;
-       if(a + c < n){ cout << "NO" << ln; }
-       else{
+        ll l,r;  cin >> l >> r;
+        for(int i = 0; i<3; i++){
+            if(l>r){ break; }
+            if(l<=r && l%3 == 0){ break; }
+            else{ l++; }
+        }
 
-        if(b >= a){ cnt += b-a; b = b-a; }
-        else{ cnt += b; b = 0; }
+        for(int i = 0; i < 3; i++){
+            if(l <= r && r%3 ==0){ break; }
+            else{ r--; }
+        }
 
-        if(b >= c){ cnt += c; }
-        else{ cnt += b; }
-        
-        if(cnt >=n){ cout << "YES" << ln; }
-        else{ cout << "NO" << ln; }
-       }
+        ll a = (l / 3), b = (r / 3);
+        cout << abs(a-b)+1 << ln;
     }
 	return 0;
 }
