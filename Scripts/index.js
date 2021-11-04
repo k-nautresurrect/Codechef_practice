@@ -15,7 +15,7 @@ app.post('/',(req, res) => {
 	}
 	
 	console.log("loaded");
-	fs.writeFile('/home/kaynaut/Desktop/Codechef_practice/code.cpp:tests',JSON.stringify(tests),function(){})
+	fs.writeFile('/home/kaynaut/Desktop/Codechef_practice/Codechef.java:tests',JSON.stringify(tests),function(){})
 	res.sendStatus(200);
 });
 app.listen(port, err => {
