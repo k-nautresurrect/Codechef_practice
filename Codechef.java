@@ -6,18 +6,25 @@ class Codechef {
 	public static void main (String[] args) throws java.lang.Exception {
 		Scanner in = new Scanner(System.in);
 		int t = in.nextInt();
+		int n = t;
+		int[] lead = new int[t + 1];
+		int max = 0;
+
 		while (t-- > 0) {
-			int a = in.nextInt();
-			int b = in.nextInt();
-			int c = in.nextInt();
+			int Si = in.nextInt();
+			int Ti = in.nextInt();
 
-			int max = Math.max(a, b);
-			int max1 = Math.max(b, c);
-			int max2 = Math.max(a, c);
+			lead[t] = Math.max(Si, Ti) - Math.min(Si, Ti);
+			if (lead[t] > max) {
+				max = lead[t];
 
-			if (max == max1) {System.out.println(max2);}
-			if (max1 == max2) {System.out.println(max);}
-			if (max == max2) {System.out.println(max1);}
+				if (Math.max(Si, Ti) == Si) {
+					lead[n] = 1;
+				} else {
+					lead[n] = 2;
+				}
+			}
 		}
+		System.out.print(lead[n] + " " + max);
 	}
 }
