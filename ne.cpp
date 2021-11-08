@@ -3,19 +3,18 @@
 using namespace std;
 
 int main() {
-	int T;
+	long long T;
 	cin >> T;
-	while (T--) {
-		int n;  cin >> n;
-		long double sum = 0;
-		for (int i = 1; i <= n; i++) {
-			sum += log(i);
-		}
-		string res = to_string(round(exp(sum)));
-		int indx = res.find('.');
-		string result = res.substr(0, indx);
-		cout << result << "\n";
+	vector<long long> v(T);
+	for (long long i = 0; i < T; ++i) { cin >> v[i]; }
+	sort(v.begin(), v.end());
+	long long max = 0, res;
+	for (long long i = 0; i < T; i++) {
+		res = (T - i) * v[i];
+		if (res > max) { max = res; }
 	}
+	cout << max << endl;
 	return 0;
 }
+
 

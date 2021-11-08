@@ -5,11 +5,18 @@ import java.io.*;
 class Codechef {
 	public static void main (String[] args) throws java.lang.Exception {
 		Scanner in = new Scanner(System.in);
-		int t = in.nextInt();
-		int max = 0, lovr = 0;
-		while (t-- > 0) {
-			int n = in.nextInt();
-			System.out.println((n / 2) + 1);
+		long t = in.nextLong();
+		ArrayList<Long> a = new ArrayList<Long>();
+
+		for (long i = 0; i < t; i++) { a.add(in.nextLong()); }
+		Collections.sort(a);
+
+		long max = 0;
+		long res;
+		for (long i = 0; i < t; i++) {
+			res = (t - i) * a.get(i);
+			if (res > max) { max = res; }
 		}
+		System.out.println(max);
 	}
 }
